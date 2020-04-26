@@ -1,0 +1,25 @@
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - options
+
+responses:
+  utter_greet:
+  - text: "Hi, Great to see you!"
+
+  utter_options:
+  - text: "I can look up for drug information!"
+
+  utter_welcome:
+  - text: "Your welcome. Always here to help you!"
+
+  utter_unclear:
+  - text: "I'm not sure what you are trying to tell..."
+
+  utter_goodbye:
+  - text: "Goodbye, see you again!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
