@@ -42,6 +42,13 @@
 * goodbye
   - utter_goodbye
 
+## sideEffects query5
+* greet
+  - utter_greet
+* sideEffectsQuery{"medicine": "asprin"}
+  - slot{"medicine": "asprin"}
+  - utter_forwardToSideEffects
+
 ## query path1
 * greet
   - utter_greet
