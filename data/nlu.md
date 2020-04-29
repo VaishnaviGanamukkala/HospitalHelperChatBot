@@ -1,3 +1,5 @@
+## lookup:medicine
+data/lookup_tables/medicinalproducts.txt
 ## intent:greet
 - hi there
 - hi
@@ -47,3 +49,11 @@
 - what help you provide
 - how can you be helpful
 - what can I expect from you
+## intent:sideEffectsQuery
+- what are the side effects of [paracetamol](medicine)
+- does [ibuprofen](medicine) have any after effects
+- will anything happen with [insulin](medicine) intake
+- [omeprazole](medicine) side effects
+- health consequences of [calcium](medicine)
+- aftermaths resulting due to [prednisone](medicine)
+- is body harm caused by [nexium](medicine)
