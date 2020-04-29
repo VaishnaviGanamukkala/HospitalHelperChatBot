@@ -3,19 +3,30 @@ intents:
   - goodbye
   - thanks
   - options
+  - sideEffectsQuery
+
+slots:
+  medicine:
+    type: text
+
+entities:
+- medicine
 
 responses:
   utter_greet:
   - text: "Hi, Great to see you!"
 
   utter_options:
-  - text: "I can look up for drug information!"
+  - text: "I can inform you regarding drug side effects and brief you on a patient’s particulars based their ID"
+
+  utter_forwardToSideEffects:
+  - text: "Navigating to adverse drug effects module..."
 
   utter_welcome:
   - text: "Your welcome. Always here to help you!"
 
   utter_unclear:
-  - text: "I'm not sure what you are trying to tell..."
+  - text: "I'm not sure what you are trying to say..."
 
   utter_goodbye:
   - text: "Goodbye, see you again!"
