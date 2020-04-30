@@ -6,6 +6,7 @@
 * sideEffectsQuery{"medicine": "humira"}
   - slot{"medicine": "humira"}
   - utter_forwardToSideEffects
+  - action_get_side_effects
 * thanks
   - utter_welcome
 * goodbye
@@ -19,6 +20,7 @@
 * sideEffectsQuery{"medicine": "prednisone"}
   - slot{"medicine": "prednisone"}
   - utter_forwardToSideEffects
+  - action_get_side_effects
 * goodbye
   - utter_goodbye
 
@@ -28,6 +30,7 @@
 * sideEffectsQuery{"medicine": "amlodipine"}
   - slot{"medicine": "amlodipine"}
   - utter_forwardToSideEffects
+  - action_get_side_effects
 * thanks
   - utter_welcome
 * goodbye
@@ -39,6 +42,7 @@
 * sideEffectsQuery{"medicine": "fentanyl"}
   - slot{"medicine": "fentanyl"}
   - utter_forwardToSideEffects
+  - action_get_side_effects
 * goodbye
   - utter_goodbye
 
@@ -48,6 +52,7 @@
 * sideEffectsQuery{"medicine": "asprin"}
   - slot{"medicine": "asprin"}
   - utter_forwardToSideEffects
+  - action_get_side_effects
 
 ## query path1
 * greet
