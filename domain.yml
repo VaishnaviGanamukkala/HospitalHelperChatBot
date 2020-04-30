@@ -12,6 +12,15 @@ slots:
 entities:
 - medicine
 
+actions:
+  - utter_greet
+  - utter_options
+  - utter_forwardToSideEffects
+  - utter_welcome
+  - utter_unclear
+  - utter_goodbye
+  - action_get_side_effects
+
 responses:
   utter_greet:
   - text: "Hi, Great to see you!"
