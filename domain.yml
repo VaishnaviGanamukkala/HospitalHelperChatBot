@@ -4,6 +4,7 @@ intents:
   - thanks
   - options
   - sideEffectsQuery
+  - hospitalSearchQuery
 
 slots:
   medicine:
@@ -11,11 +12,13 @@ slots:
 
 entities:
 - medicine
+- location
 
 actions:
   - utter_greet
   - utter_options
   - utter_forwardToSideEffects
+  - utter_forwardToHospitalSearch
   - utter_welcome
   - utter_unclear
   - utter_goodbye
