@@ -25,6 +25,7 @@ actions:
   - utter_unclear
   - utter_goodbye
   - action_get_side_effects
+  - action_get_hospital_search
 
 responses:
   utter_greet:
