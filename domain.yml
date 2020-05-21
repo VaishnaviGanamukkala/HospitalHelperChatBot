@@ -9,6 +9,8 @@ intents:
 slots:
   medicine:
     type: text
+  location:
+    type: text
 
 entities:
 - medicine
@@ -36,6 +38,14 @@ responses:
   
   utter_forwardToHospitalSearch:
   - text: "Navigating to hospital search module..."
+  
+  utter_ask_city:
+        - text: "Which city do you want?"
+        buttons:
+        - title: "Hyd"
+        payload: '/choose{"location": "Hyd"}'
+        - title: "Bangalore"
+        payload: '/choose{"location": "Bangalore"}'
 
 
   utter_welcome:
