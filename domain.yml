@@ -30,6 +30,10 @@ responses:
 
   utter_forwardToSideEffects:
   - text: "Navigating to adverse drug effects module..."
+  
+  utter_forwardToHospitalSearch:
+  - text: "Navigating to hospital search module..."
+
 
   utter_welcome:
   - text: "Your welcome. Always here to help you!"
