@@ -53,6 +53,62 @@
   - slot{"medicine": "asprin"}
   - utter_forwardToSideEffects
   - action_get_side_effects
+  
+  ## hospitalSearch query1
+* greet
+  - utter_greet
+* options
+  - utter_options
+* hospitalSearchQuery{"location": "hyderabad"}
+  - slot{"location": "hyderabad"}
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+  
+  ## hospitalSearch query2
+* greet
+  - utter_greet
+* options
+  - utter_options
+* hospitalSearchQuery{"location": "bangalore"}
+  - slot{"location": "bangalore"}
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* goodbye
+  - utter_goodbye
+  
+  ## hospitalSearch query3
+* greet
+  - utter_greet
+* hospitalSearchQuery{"location": "chennai"}
+  - slot{"location": "chennai"}
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+  
+  ## hospitalSearch query4
+* greet
+  - utter_greet
+* hospitalSearchQuery{"location": "pune"}
+  - slot{"location": "pune"}
+  - utter_forwardToHospitaSearch
+  - action_get_hospital_search
+* goodbye
+  - utter_goodbye
+  
+  ## hospitalSearch query5
+* greet
+  - utter_greet
+* hospitalSearchQuery{"location": "delhi"}
+  - slot{"location": "delhi"}
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
 
 ## query path1
 * greet
