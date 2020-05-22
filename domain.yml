@@ -43,10 +43,22 @@ responses:
   utter_ask_city:
         - text: "Which city do you want?"
         buttons:
-        - title: "Hyd"
-        payload: '/choose{"location": "Hyd"}'
+        - title: "Hyderabad"
+        payload: '/choose{"location": "Hyderabad"}'
         - title: "Bangalore"
         payload: '/choose{"location": "Bangalore"}'
+        - title: "Chennai"
+        payload: '/choose{"location": "Chennai"}'
+        - title: "Pune"
+        payload: '/choose{"location": "Pune"}'
+        - title: "Delhi"
+        payload: '/choose{"location": "Delhi"}'
+        - title: "Mumbai"
+        payload: '/choose{"location": "Mumbai"}'
+
+
+
+
 
 
   utter_welcome:
