@@ -57,3 +57,11 @@ data/lookup_tables/medicinalproducts.txt
 - health consequences of [calcium](medicine)
 - aftermaths resulting due to [prednisone](medicine)
 - is body harm caused by [nexium](medicine)
+## intent:hospitalSearchQuery
+- what are the hospitals in [hyderabad](location)
+- can you name the hospitals in [bangalore](location)
+- give the names of hospitals in [chennai](location)
+- find out the hospitals in [pune](location)
+- does [delhi](location) has any hospitals
+- what are the best hospitals in [mumbai](location)
+
