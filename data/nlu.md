@@ -122,6 +122,9 @@
 
 ## lookup:medicine
   data/lookup_tables/medicinalproducts.txt
+  
+## lookup:medicine
+  data/lookup_tables/cities.txt
 
 ## lookup:symptoms
   data/lookup_tables/symptoms_sandbox.txt
