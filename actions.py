@@ -62,7 +62,7 @@ class ActionGetSideEffects(Action):
      
 class ActionHospitalSearch(Action):
      def name(self):
-         return "action_hospital_search"
+         return "action_get_hospital_search"
 
      def run(self, dispatcher, tracker, domain):
          
