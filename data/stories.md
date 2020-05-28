@@ -54,7 +54,7 @@
   - utter_forwardToSideEffects
   - action_get_side_effects
   
-  ## hospitalSearch query1
+## hospitalSearch query1
 * greet
   - utter_greet
 * options
@@ -68,7 +68,7 @@
 * goodbye
   - utter_goodbye
   
-  ## hospitalSearch query2
+## hospitalSearch query2
 * greet
   - utter_greet
 * options
@@ -80,7 +80,7 @@
 * goodbye
   - utter_goodbye
   
-  ## hospitalSearch query3
+## hospitalSearch query3
 * greet
   - utter_greet
 * hospitalSearchQuery{"location": "chennai"}
@@ -92,7 +92,7 @@
 * goodbye
   - utter_goodbye
   
-  ## hospitalSearch query4
+## hospitalSearch query4
 * greet
   - utter_greet
 * hospitalSearchQuery{"location": "pune"}
@@ -102,7 +102,7 @@
 * goodbye
   - utter_goodbye
   
-  ## hospitalSearch query5
+## hospitalSearch query5
 * greet
   - utter_greet
 * hospitalSearchQuery{"location": "delhi"}
