@@ -62,6 +62,14 @@
 - is body harm caused by [nexium](medicine)
 - side effects of [sodium](medicine)
 
+## intent:hospitalSearchQuery
+- what are the hospitals in [hyderabad](location)
+- can you name the hospitals in [bangalore](location)
+- give the names of hospitals in [chennai](location)
+- find out the hospitals in [pune](location)
+- does [delhi](location) has any hospitals
+- what are the best hospitals in [mumbai](location)
+
 ## intent:symptomsAnalysisQuery
 - can you diagonise my symptoms
 - what diseases could i have
@@ -94,10 +102,17 @@
 - [1899](year_of_birth)
 
 ## intent:informGender
+- i'm in [hyderabad](locate)
+- my city is [bangalore](locate)
+- [chennai](locate)
+- i'm near [pune](locate)
+
+## intent:informLocate
 - i'm a [female](gender)
 - my gender is [male](gender)
 - [female](gender)
 - my sex is [male](gender)
+
 
 ## synonym:female
 - girl
@@ -114,6 +129,9 @@
 
 ## lookup:medicine
   data/lookup_tables/medicinalproducts.txt
+  
+## lookup:location
+  data/lookup_tables/cities.txt
 
 ## lookup:symptoms
   data/lookup_tables/symptoms_sandbox.txt
