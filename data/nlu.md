@@ -123,7 +123,7 @@
 ## lookup:medicine
   data/lookup_tables/medicinalproducts.txt
   
-## lookup:medicine
+## lookup:location
   data/lookup_tables/cities.txt
 
 ## lookup:symptoms
