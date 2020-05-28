@@ -102,10 +102,17 @@
 - [1899](year_of_birth)
 
 ## intent:informGender
+- i'm in [hyderabad](locate)
+- my city is [bangalore](locate)
+- [chennai](locate)
+- i'm near [pune](locate)
+
+## intent:informLocate
 - i'm a [female](gender)
 - my gender is [male](gender)
 - [female](gender)
 - my sex is [male](gender)
+
 
 ## synonym:female
 - girl
