@@ -149,9 +149,11 @@
 ## hospitalSearch query4
 * greet
   - utter_greet
-* hospitalSearchQuery{"location": "pune"}
+* hospitalSearchWithNoLocation
+  - utter_ask_city
+* informLocation{"location": "pune"}
   - slot{"location": "pune"}
-  - utter_forwardToHospitaSearch
+  - utter_forwardToHospitalSearch
   - action_get_hospital_search
 * goodbye
   - utter_goodbye
@@ -159,7 +161,9 @@
 ## hospitalSearch query5
 * greet
   - utter_greet
-* hospitalSearchQuery{"location": "delhi"}
+* hospitalSearchWithNoLocation
+  - utter_ask_city
+* informLocation{"location": "delhi"}
   - slot{"location": "delhi"}
   - utter_forwardToHospitalSearch
   - action_get_hospital_search

@@ -62,6 +62,13 @@
 - is body harm caused by [nexium](medicine)
 - side effects of [sodium](medicine)
 
+## intent:hospitalSearchWithNoLocation
+- can i find the hospitals near me?
+- what health facilities are near me?
+- health centers near me
+- best hospitals around me
+- i want to know the clinics in the area i live in
+
 ## intent:hospitalSearchQuery
 - what are the hospitals in [hyderabad](location)
 - can you name the hospitals in [bangalore](location)
@@ -101,13 +108,13 @@
 - my birth year is [1999](year_of_birth)
 - [1899](year_of_birth)
 
-## intent:informGender
-- i'm in [hyderabad](locate)
-- my city is [bangalore](locate)
-- [chennai](locate)
-- i'm near [pune](locate)
+## intent:informLocation
+- i'm in [hyderabad](location)
+- my city is [bangalore](location)
+- [chennai](location)
+- i'm near [pune](location)
 
-## intent:informLocate
+## intent:informGender
 - i'm a [female](gender)
 - my gender is [male](gender)
 - [female](gender)

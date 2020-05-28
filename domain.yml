@@ -1,4 +1,5 @@
 intents:
+- hospitalSearchWithNoLocation
 - hospitalSearchQuery
 - thanks
 - goodbye
@@ -10,6 +11,7 @@ intents:
 - stop
 - informSymptoms
 - informYOB
+- informLocation
 
 forms:
 - symptoms_analysis_form
@@ -21,8 +23,6 @@ slots:
     type: text
   location:
     type: text
-  requested_slot:
-    type: unfeaturized
   symptoms:
     type: unfeaturized
   year_of_birth:
@@ -70,25 +70,23 @@ responses:
   - text: Hi, Great to see you!
   utter_options:
   - text: I can inform you regarding drug side effects, tell the possible disease you may have due to the symptoms you have and get the nearest hospitals.
-  utter_forwardToSideEffects:
-  - text: "Navigating to adverse drug effects module..."
   utter_forwardToHospitalSearch:
   - text: "Navigating to hospital search module..."
   utter_ask_city:
-        - text: "Which city do you want?"
-        buttons:
-        - title: "Hyderabad"
-        payload: '/choose{"location": "Hyderabad"}'
-        - title: "Bangalore"
-        payload: '/choose{"location": "Bangalore"}'
-        - title: "Chennai"
-        payload: '/choose{"location": "Chennai"}'
-        - title: "Pune"
-        payload: '/choose{"location": "Pune"}'
-        - title: "Delhi"
-        payload: '/choose{"location": "Delhi"}'
-        - title: "Mumbai"
-        payload: '/choose{"location": "Mumbai"}'
+  - buttons:
+    - payload: '/informLocation{"location": "hyderabad"}'
+      title: "Hyderabad"
+    - payload: '/informLocation{"location": "bangalore"}'
+      title: "Bangalore"
+    - payload: '/informLocation{"location": "chennai"}'
+      title: "Chennai"
+    - payload: '/informLocation{"location": "pune"}'
+      title: "Pune"
+    - payload: '/informLocation{"location": "delhi"}'
+      title: "Delhi"
+    - payload: '/informLocation{"location": "mumbai"}'
+      title: "Mumbai"
+    text: "Please tell the city in which you want to find the hospital..."
   utter_unclear:
   - text: I'm not sure what you are trying to say...
   utter_welcome:
