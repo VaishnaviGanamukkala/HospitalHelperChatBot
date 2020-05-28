@@ -1,3 +1,57 @@
+## symptoms query1
+* greet
+  - utter_greet
+* options
+  - utter_options
+* symptomsAnalysisQuery 
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+  - form{"name": null}
+  - action_get_diagnosis_and_specializations
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+
+## symptoms query2
+* greet
+  - utter_greet
+* options
+  - utter_options
+* informSymptoms
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+  - form{"name": null}
+  - action_get_diagnosis_and_specializations
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+
+## symptoms query3
+* greet
+  - utter_greet
+* symptomsAnalysisQuery
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+  - form{"name": null}
+  - action_get_diagnosis_and_specializations
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+
+## symptoms query 4
+* greet
+  - utter_greet
+* informSymptoms
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+  - form{"name": null}
+  - action_get_diagnosis_and_specializations
+* goodbye
+  - utter_goodbye
+
 ## sideEffects query1
 * greet
   - utter_greet
@@ -146,3 +200,29 @@
 
 ## fallback
 - utter_unclear
+
+## symptoms query1
+* greet
+  - utter_greet
+* options
+  - utter_options
+* symptomsAnalysisQuery
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye
+
+## symptoms query2
+* greet
+  - utter_greet
+* options
+  - utter_options
+* informSymptoms
+  - symptoms_analysis_form
+  - form{"name": "symptoms_analysis_form"}
+* thanks
+  - utter_welcome
+* goodbye
+  - utter_goodbye

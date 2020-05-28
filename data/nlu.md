@@ -1,5 +1,3 @@
-## lookup:medicine
-data/lookup_tables/medicinalproducts.txt
 ## intent:greet
 - hi there
 - hi
@@ -11,6 +9,7 @@ data/lookup_tables/medicinalproducts.txt
 - morning
 - good afternoon
 - good evening
+
 ## intent:goodbye
 - bye
 - bye bye
@@ -28,6 +27,7 @@ data/lookup_tables/medicinalproducts.txt
 - it’s nice meeting you
 - all right then
 - bye for now
+
 ## intent:thanks
 - thanks
 - thank you
@@ -39,7 +39,8 @@ data/lookup_tables/medicinalproducts.txt
 - that’s great thank you
 - i appreciate your help, thank you
 - i am so thankful
-## intent:options 
+
+## intent:options
 - how can you help me
 - what can you do
 - what can you provide
@@ -49,6 +50,8 @@ data/lookup_tables/medicinalproducts.txt
 - what help you provide
 - how can you be helpful
 - what can I expect from you
+- what can you do?
+
 ## intent:sideEffectsQuery
 - what are the side effects of [paracetamol](medicine)
 - does [ibuprofen](medicine) have any after effects
@@ -57,6 +60,8 @@ data/lookup_tables/medicinalproducts.txt
 - health consequences of [calcium](medicine)
 - aftermaths resulting due to [prednisone](medicine)
 - is body harm caused by [nexium](medicine)
+- side effects of [sodium](medicine)
+
 ## intent:hospitalSearchQuery
 - what are the hospitals in [hyderabad](location)
 - can you name the hospitals in [bangalore](location)
@@ -65,3 +70,58 @@ data/lookup_tables/medicinalproducts.txt
 - does [delhi](location) has any hospitals
 - what are the best hospitals in [mumbai](location)
 
+## intent:symptomsAnalysisQuery
+- can you diagonise my symptoms
+- what diseases could i have
+- what can be the possible diseases for my symptoms
+- which doctor should i meet with my present health signs
+- which medical specialization should i visit with my symptoms
+- do i have a disease
+- should i visit a doctor
+- do i have any medical disorders
+- which doctor should i visit
+- could i be having any health issues
+- which hospital should i go
+
+## intent:informSymptoms
+- I'm having [Headache](symptoms) , [Nausea](symptoms) and [Tiredness](symptoms)
+- I have the symptoms [weakness](symptoms) , [Weight gain](symptoms)
+- [Vomiting](symptoms) , [Sweating](symptoms) , [Palpitations](symptoms) , and [Nausea](symptoms)
+- [Dizziness](symptoms) is the trouble i have
+- [Cough](symptoms) , [Fever](symptoms) , [Runny nose](symptoms) , [Shortness of breath](symptoms) , [Sore throat](symptoms) are the symptoms i have
+- I feel [Chest pain](symptoms) , [Chest tightness](symptoms) , [Chills](symptoms) , [Cold sweats](symptoms) , [Heartburn](symptoms) and get [Sputum](symptoms)
+- I have [Burning eyes](symptoms) , [Dry eyes](symptoms) and [Eye redness](symptoms)
+- i have [cold cough](symptoms) and [fever](symptoms)
+- i have [fever](symptoms) and [cough](symptoms)
+
+## intent:informYOB
+- i'm born in [1969](year_of_birth)
+- my year of birth is [2012](year_of_birth)
+- i was born in the year [2001](year_of_birth)
+- my birth year is [1999](year_of_birth)
+- [1899](year_of_birth)
+
+## intent:informGender
+- i'm a [female](gender)
+- my gender is [male](gender)
+- [female](gender)
+- my sex is [male](gender)
+
+## synonym:female
+- girl
+- woman
+- lady
+
+## synonym:male
+- boy
+- man
+- gent
+
+## regex:year_of_birth
+- [0-9]{4}
+
+## lookup:medicine
+  data/lookup_tables/medicinalproducts.txt
+
+## lookup:symptoms
+  data/lookup_tables/symptoms_sandbox.txt

@@ -1,45 +1,79 @@
 intents:
-  - greet
-  - goodbye
-  - thanks
-  - options
-  - sideEffectsQuery
-  - hospitalSearchQuery
+- hospitalSearchQuery
+- thanks
+- goodbye
+- options
+- sideEffectsQuery
+- greet
+- informGender
+- symptomsAnalysisQuery
+- stop
+- informSymptoms
+- informYOB
+
+forms:
+- symptoms_analysis_form
 
 slots:
+  gender:
+    type: unfeaturized
   medicine:
     type: text
   location:
     type: text
+  requested_slot:
+    type: unfeaturized
+  symptoms:
+    type: unfeaturized
+  year_of_birth:
+    type: unfeaturized
 
 entities:
+- gender
 - medicine
 - location
+- symptoms
+- year_of_birth
 
 actions:
-  - utter_greet
-  - utter_options
-  - utter_forwardToSideEffects
-  - utter_forwardToHospitalSearch
-  - utter_welcome
-  - utter_unclear
-  - utter_goodbye
-  - action_get_side_effects
-  - action_get_hospital_search
+- action_get_diagnosis_and_specializations
+- action_get_side_effects
+- utter_ask_gender
+- utter_ask_symptoms
+- utter_ask_year_of_birth
+- utter_forwardToSideEffects
+- utter_goodbye
+- utter_greet
+- utter_options
+- utter_unclear
+- utter_welcome
+- utter_forwardToHospitalSearch
+- action_get_hospital_search
 
 responses:
+  utter_ask_gender:
+  - buttons:
+    - payload: '/informGender{"gender": "male"}'
+      title: Male
+    - payload: '/informGender{"gender": "female"}'
+      title: Female
+    text: What is your gender?
+  utter_ask_symptoms:
+  - text: What symptoms do you have?
+  utter_ask_year_of_birth:
+  - text: What is the year of your birth?
+  utter_forwardToSideEffects:
+  - text: Navigating to adverse drug effects module...
+  utter_goodbye:
+  - text: Goodbye, see you again!
   utter_greet:
-  - text: "Hi, Great to see you!"
-
+  - text: Hi, Great to see you!
   utter_options:
-  - text: "I can inform you regarding drug side effects and brief you on a patient’s particulars based their ID"
-
+  - text: I can inform you regarding drug side effects, tell the possible disease you may have due to the symptoms you have and get the nearest hospitals.
   utter_forwardToSideEffects:
   - text: "Navigating to adverse drug effects module..."
-  
   utter_forwardToHospitalSearch:
   - text: "Navigating to hospital search module..."
-  
   utter_ask_city:
         - text: "Which city do you want?"
         buttons:
@@ -55,21 +89,11 @@ responses:
         payload: '/choose{"location": "Delhi"}'
         - title: "Mumbai"
         payload: '/choose{"location": "Mumbai"}'
-
-
-
-
-
-
-  utter_welcome:
-  - text: "Your welcome. Always here to help you!"
-
   utter_unclear:
-  - text: "I'm not sure what you are trying to say..."
-
-  utter_goodbye:
-  - text: "Goodbye, see you again!"
+  - text: I'm not sure what you are trying to say...
+  utter_welcome:
+  - text: Your welcome. Always here to help you!
 
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
+  session_expiration_time: 60
