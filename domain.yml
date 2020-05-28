@@ -6,7 +6,6 @@ intents:
 - sideEffectsQuery
 - greet
 - informGender
-- informLocate
 - symptomsAnalysisQuery
 - stop
 - informSymptoms
@@ -40,7 +39,6 @@ actions:
 - action_get_diagnosis_and_specializations
 - action_get_side_effects
 - utter_ask_gender
-- utter_ask_locate
 - utter_ask_symptoms
 - utter_ask_year_of_birth
 - utter_forwardToSideEffects
