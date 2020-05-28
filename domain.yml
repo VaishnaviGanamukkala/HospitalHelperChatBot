@@ -31,7 +31,6 @@ slots:
 
 entities:
 - gender
-- locate
 - medicine
 - location
 - symptoms
