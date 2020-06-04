@@ -45,6 +45,50 @@
 * goodbye: see you again
   - utter_goodbye      
   
+## sideEffects question 1
+* greet: hey!
+  - utter_greet
+* sideEffectsQuery: can you mention the side effects of paracetamol
+  - utter_forwardToSideEffects
+  - action_get_side_effects
+* thanks: great thank you
+  - utter_welcome
+* goodbye: see you again
+  - utter_goodbye      
+  
+## sideEffects question 2
+* greet: hey there!
+  - utter_greet
+* sideEffectsQuery: may i know the health consequences of insulin
+  - utter_forwardToSideEffects
+  - action_get_side_effects
+* thanks: thank you
+  - utter_welcome
+* goodbye: bye-bye
+  - utter_goodbye     
+  
+## sideEffects question 3
+* greet: hii!
+  - utter_greet
+* sideEffectsQuery: does nexium has any side effects
+  - utter_forwardToSideEffects
+  - action_get_side_effects
+* thanks: i am soo thankful
+  - utter_welcome
+* goodbye: bye for now
+  - utter_goodbye      
+  
+## sideEffects question 4
+* greet: hi there!
+  - utter_greet
+* sideEffectsQuery: will there be any effects on using omeprazole
+  - utter_forwardToSideEffects
+  - action_get_side_effects
+* thanks: thanks a lot
+  - utter_welcome
+* goodbye: see you soon
+  - utter_goodbye        
+  
 
 
 ## happy path 1
