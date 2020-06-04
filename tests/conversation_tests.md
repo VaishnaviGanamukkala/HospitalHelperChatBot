@@ -34,6 +34,17 @@
 * goodbye: ok then i will take a leave!
   - utter_goodbye    
   
+## hospital question 4
+* greet: hey!
+  - utter_greet
+* hospitalSearchQuery: tell the names of hospitals in Delhi
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks: great thank you
+  - utter_welcome
+* goodbye: see you again
+  - utter_goodbye      
+  
 
 
 ## happy path 1
