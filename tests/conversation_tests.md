@@ -1,6 +1,41 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/user-guide/testing-your-assistant/
 
+## hospital question 1
+* greet: hello there!
+  - utter_greet
+* hospitalSearchQuery: list of health care centers located around Hyderabad
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks: thank you
+  - utter_welcome
+* goodbye: see you later!
+  - utter_goodbye
+  
+## hospital question 2
+* greet: hii!
+  - utter_greet
+* hospitalSearchQuery: can you name the health care centers in Bangalore
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks: thanks
+  - utter_welcome
+* goodbye: bye!
+  - utter_goodbye  
+  
+## hospital question 3
+* greet: hello!
+  - utter_greet
+* hospitalSearchQuery: give the names of hospitals near Chennai
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks: thank you so much
+  - utter_welcome
+* goodbye: ok then i will take a leave!
+  - utter_goodbye    
+  
+
+
 ## happy path 1
 * greet: hello there!
   - utter_greet
