@@ -89,6 +89,50 @@
 * goodbye: see you soon
   - utter_goodbye        
   
+## symptomsAnalysis question 1
+* greet: hello!
+  - utter_greet
+* symptomsAnalysisQuery: can you suggest me the doctor that i have to visit
+  - utter_forwardToSymptomsAnalysis
+  - action_get_symptoms_analysis
+* thanks: thanks
+  - utter_welcome
+* goodbye: bye for now
+  - utter_goodbye      
+  
+## symptomsAnalysis question 2
+* greet: hello there!
+  - utter_greet
+* symptomsAnalysisQuery: which doctor should i meet
+  - utter_forwardToSymptomsAnalysis
+  - action_get_symptoms_analysis
+* thanks: great thank you
+  - utter_welcome
+* goodbye: bye-bye
+  - utter_goodbye      
+  
+## symptomsAnalysis question 3
+* greet: good day!
+  - utter_greet
+* symptomsAnalysisQuery: is there a need for me to meet a doctor
+  - utter_forwardToSymptomsAnalysis
+  - action_get_symptoms_analysis
+* thanks: wow that's great
+  - utter_welcome
+* goodbye: all right then
+  - utter_goodbye     
+  
+## symptomsAnalysis question 4
+* greet: hii!
+  - utter_greet
+* symptomsAnalysisQuery: do i have any health issues
+  - utter_forwardToSymptomsAnalysis
+  - action_get_symptoms_analysis
+* thanks: thanks
+  - utter_welcome
+* goodbye: see you soon
+  - utter_goodbye     
+  
 
 
 ## happy path 1
