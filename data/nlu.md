@@ -117,19 +117,25 @@
 ## intent:informGender
 - i'm a [female](gender)
 - my gender is [male](gender)
-- [female](gender)
-- my sex is [male](gender)
+- [hetero](gender)
+- my sex is [asexual](gender)
+- i'm [transgender](gender)
+- [gay](gender)
+- i'm identified as [lesbian](gender)
+- my gender identity is [bisexual](gender)
 
 
 ## synonym:female
 - girl
 - woman
 - lady
+- f
 
 ## synonym:male
 - boy
 - man
 - gent
+- m
 
 ## regex:year_of_birth
 - [0-9]{4}
