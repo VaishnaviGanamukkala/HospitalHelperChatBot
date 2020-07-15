@@ -71,27 +71,27 @@ responses:
   utter_options:
   - text: I can inform you regarding drug side effects, tell the possible disease you may have due to the symptoms you have and get the nearest hospitals.
   utter_forwardToHospitalSearch:
-  - text: "Navigating to hospital search module..."
+  - text: Navigating to hospital search module...
   utter_ask_city:
   - buttons:
     - payload: '/informLocation{"location": "hyderabad"}'
-      title: "Hyderabad"
+      title: Hyderabad
     - payload: '/informLocation{"location": "bangalore"}'
-      title: "Bangalore"
+      title: Bangalore
     - payload: '/informLocation{"location": "chennai"}'
-      title: "Chennai"
+      title: Chennai
     - payload: '/informLocation{"location": "pune"}'
-      title: "Pune"
+      title: Pune
     - payload: '/informLocation{"location": "delhi"}'
-      title: "Delhi"
+      title: Delhi
     - payload: '/informLocation{"location": "mumbai"}'
-      title: "Mumbai"
-    text: "Please tell the city in which you want to find the hospital..."
+      title: Mumbai
+    text: Which city do you want to find the hospitals in?
   utter_unclear:
   - text: I'm not sure what you are trying to say...
   utter_welcome:
   - text: Your welcome. Always here to help you!
 
 session_config:
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
   session_expiration_time: 60
