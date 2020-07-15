@@ -11,6 +11,8 @@ import operator
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
+from rasa_sdk.events import AllSlotsReset
+from datetime import date
 
 class ActionGetSideEffects(Action):
      def name(self):
@@ -21,6 +23,10 @@ class ActionGetSideEffects(Action):
          side_effects = {}
 
          medicine = tracker.get_slot('medicine')
+         if medicine == None:
+             dispatcher.utter_message(text="No drug with the given name found. Please check if the spelling is right, or if there is an alternative name for the drug.")
+             return [AllSlotsReset()]
+
          url = "https://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:\"" + medicine.upper() + "\"&limit=10"
          print(url)
          with urllib.request.urlopen(url) as record:
@@ -38,28 +44,26 @@ class ActionGetSideEffects(Action):
          sorted_effects = sorted(side_effects.items(), key = operator.itemgetter(1), reverse = True)
          say_effects = ""
          count = len(sorted_effects)
-         if count > 7:
-             i = 1
-             for eff in sorted_effects:
+         l = 0
+         for eff in sorted_effects:
+             if eff[0] != "No adverse event":
                  say_effects += (eff[0] + ", ")
-                 if i == 7:
-                     break
-                 i += 1
-             say_effects += ("are the side effects caused due to " + medicine[0].upper() + medicine[1:].lower())
+                 l += 1
+             if l == 7:
+                 break
+
+         if l == 0:
+             say_effects += "No side effects found. Please check if you gave the right spelling of the medicine."
+         elif l == 1:
+             say_effects += ("is the side effect caused due to" + medicine[0].upper() + medicine[1:].lower())
          else:
-             if count == 0:
-                 say_effects += "No side effects found. Please check if you gave the right spelling of the medicine."
-             else:
-                 for eff in sorted_effects:
-                    say_effects += (eff[0] + ", ")
-                 if count == 1:
-                     say_effects += ("is the side effect caused due to" + medicine[0].upper() + medicine[1:].lower())
-                 else:
-                     say_effects += ("are the side effects caused due to " + medicine[0].upper() + medicine[1:].lower())
+             say_effects += ("are the side effects caused due to " + medicine[0].upper() + medicine[1:].lower())
+
+         print(say_effects)
 
          dispatcher.utter_message(text=say_effects)
 
-         return []
+         return [AllSlotsReset()]
      
 class ActionHospitalSearch(Action):
      def name(self):
@@ -72,6 +76,9 @@ class ActionHospitalSearch(Action):
          lat_long = {"hyderabad" : ("17.3850", "78.4867"), "bangalore" : ("12.9716", "77.5946"), "chennai" : ("13.0827", "80.2707"), "pune" : ("18.5204", "73.8567"), "delhi" : ("28.7041", "77.1025"), "kolkata" : ("22.5726", "88.3639"), "mumbai" : ("19.0760", "72.8777"), "jaipur" : ("26.9124", "75.7873"), "mysore" : ("12.2958", "76.6394"), "agra" : ("27.1767", "78.0081"), "vizag" : ("17.6868", "83.2185"), "goa" : ("15.2993", "74.1240"), "amritsar" : ("31.6340", "74.8723"), "kochi" : ("9.9312", "76.2673"), "ahmedabad" : ("23.0225", "72.5714"), "thiruvananthapuram" : ("8.5241", "76.9366"), "kolhapur" : ("16.7050", "74.2433"), "solapur" : ("17.6599", "75.9064"), "madurai" : ("9.9252", "78.1198"), "kanchipuram" : ("12.8185", "79.6947"), "lucknow" : ("26.8467", "80.9462")}
 
          location = (tracker.get_slot('location')).lower()
+         if location not in lat_long:
+             dispatcher.utter_message(text="Apologies :( The search for hospitals is currently unavailable in the given location.")
+             return [AllSlotsReset()]
          url = "https://api.tomtom.com/search/2/categorySearch/hospital.json?limit=10&lat=" + lat_long[location][0] + "&lon=" + lat_long[location][1] + "&radius=10000&key=your_api_key"
          print(url)
          with urllib.request.urlopen(url) as record:
@@ -86,7 +93,7 @@ class ActionHospitalSearch(Action):
 
          dispatcher.utter_message(text=say_hospitals)
 
-         return []
+         return [AllSlotsReset()]
 
 
 class ActionGetDiagnosisAndSpecializations(Action):
@@ -140,23 +147,26 @@ class ActionGetDiagnosisAndSpecializations(Action):
          for each in results:
              say_diseases += "You may have " + each['Issue']['Name'] + " with a predicted accuracy of " + str(each['Issue']['Accuracy']) + ". "
              if len(each['Specialisation']) != 0:
-                 say_diseases += "Please visit "
+                 say_diseases += "You may have to visit "
                  for idx, specialist in enumerate(each['Specialisation']):
                      say_diseases += specialist['Name']
                      if idx != len(each['Specialisation']) - 1:
                          say_diseases += ", "
                  
                  if len(each['Specialisation']) == 1:
-                     say_diseases += " department. "
+                     say_diseases += " department. \n"
                  else:
-                     say_diseases += " departments. "
+                     say_diseases += " departments. \n"
 
          if say_diseases == "":
              say_diseases += "No possible diseases found!"
+         else:
+             say_diseases += "Take care..."
 
          dispatcher.utter_message(text=say_diseases)
 
-         return []
+         return [AllSlotsReset()]
+         #return [SlotSet("symptoms", None), SlotSet("gender", None), SlotSet("year_of_birth", None)]
 
 
 class SymptomsForm(FormAction):
@@ -167,6 +177,25 @@ class SymptomsForm(FormAction):
     @staticmethod
     def required_slots(tracker):
         return ["symptoms", "gender", "year_of_birth"]
+
+    def validate_year_of_birth(self, value, dispatcher, tracker, domain):
+        curr_year = int(str(date.today())[:4])
+        if int(value[0]) < 1800 or int(value[0]) > curr_year:
+            dispatcher.utter_message(text="Please enter a valid year of birth. The acceptable range is from 1800 to " + str(curr_year))
+            return {"year_of_birth":None}
+        return {"year_of_birth":value}
+
+    def validate_gender(self, value, dispatcher, tracker, domain):
+        if type(value) == list:
+            if value[0] == "male" or value[0] == "female":
+                return {"gender":value}
+            else:
+                dispatcher.utter_message(text="Please input male/female")
+                return {"gender":None}
+        if value == "male" or value == "female":
+            return {"gender":value}
+        dispatcher.utter_message(text="Please input male/female")
+        return {"gender":None}
 
     def submit(self, dispatcher, tracker, domain):
         dispatcher.utter_message(template="utter_submit")
