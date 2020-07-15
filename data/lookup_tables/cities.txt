@@ -19,3 +19,10 @@ solapur
 madurai
 kanchipuram
 lucknow
+surat
+visakhapatnam
+nagpur
+kanpur
+thane
+bhopal
+indore
