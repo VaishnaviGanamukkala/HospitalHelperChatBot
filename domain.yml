@@ -78,14 +78,8 @@ responses:
       title: Hyderabad
     - payload: '/informLocation{"location": "bangalore"}'
       title: Bangalore
-    - payload: '/informLocation{"location": "chennai"}'
-      title: Chennai
-    - payload: '/informLocation{"location": "pune"}'
-      title: Pune
     - payload: '/informLocation{"location": "delhi"}'
       title: Delhi
-    - payload: '/informLocation{"location": "mumbai"}'
-      title: Mumbai
     text: Which city do you want to find the hospitals in?
   utter_unclear:
   - text: I'm not sure what you are trying to say...
