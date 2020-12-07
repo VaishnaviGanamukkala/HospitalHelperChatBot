@@ -1,0 +1,178 @@
+version: "2.0"
+stories:
+- story: symptomsAnalysis question 2 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: symptomsAnalysisQuery
+  - action: utter_forwardToSymptomsAnalysis  # predicted: symptoms_analysis_form
+  - action: action_get_symptoms_analysis  # predicted: action_listen
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: symptomsAnalysis question 3 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: symptomsAnalysisQuery
+  - action: utter_forwardToSymptomsAnalysis  # predicted: symptoms_analysis_form
+  - action: action_get_symptoms_analysis  # predicted: action_listen
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: symptomsAnalysis question 4 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: symptomsAnalysisQuery
+  - action: utter_forwardToSymptomsAnalysis  # predicted: symptoms_analysis_form
+  - action: action_get_symptoms_analysis  # predicted: action_listen
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: happy path 1 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchWithNoLocation: list of health care centers located around [Hyderabad](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: error question 2 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: symptomsAnalysisQuery
+  - action: utter_welcome  # predicted: symptoms_analysis_form
+  - intent: thanks
+  - action: utter_forwardToSymptomsAnalysis  # predicted: utter_welcome
+  - action: action_get_symptoms_analysis  # predicted: action_listen
+  - intent: goodbye
+  - action: utter_goodbye
+- story: error path 1 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_goodbye  # predicted: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchWithNoLocation: list of health care centers located around [Hyderabad](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_greet  # predicted: utter_goodbye
+- story: error question 4 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sideEffectsQuery  # predicted: sideEffectsQuery: will there be any effects on using [omeprazole](medicine)[omeprazole](medicine)
+  - action: utter_forwardToSideEffects  # predicted: symptoms_analysis_form
+  - action: action_get_side_effects
+  - intent: thanks
+  - action: utter_goodbye  # predicted: utter_welcome
+  - intent: goodbye
+  - action: utter_welcome  # predicted: utter_goodbye
+- story: hospital question 1 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchWithNoLocation: list of health care centers located around [Hyderabad](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: hospital question 2 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchQuery: can you name the health care centers in [Bangalore](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: hospital question 3 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchQuery: give the names of hospitals near [Chennai](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: hospital question 4 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hospitalSearchQuery  # predicted: hospitalSearchQuery: tell the names of hospitals in [Delhi](location)
+  - action: utter_forwardToHospitalSearch  # predicted: utter_goodbye
+  - action: action_get_hospital_search
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sideEffects question 1 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sideEffectsQuery  # predicted: sideEffectsQuery: can you mention the side effects of [paracetamol](medicine)[paracetamol](medicine)
+  - action: utter_forwardToSideEffects  # predicted: symptoms_analysis_form
+  - action: action_get_side_effects
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sideEffects question 2 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sideEffectsQuery  # predicted: sideEffectsQuery: may i know the health consequences of [insulin](medicine)[insulin](medicine)
+  - action: utter_forwardToSideEffects  # predicted: symptoms_analysis_form
+  - action: action_get_side_effects
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sideEffects question 3 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sideEffectsQuery  # predicted: sideEffectsQuery: does [nexium](medicine)[nexium](medicine) has any side effects
+  - action: utter_forwardToSideEffects  # predicted: symptoms_analysis_form
+  - action: action_get_side_effects
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: sideEffects question 4 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sideEffectsQuery  # predicted: sideEffectsQuery: will there be any effects on using [omeprazole](medicine)[omeprazole](medicine)
+  - action: utter_forwardToSideEffects  # predicted: symptoms_analysis_form
+  - action: action_get_side_effects
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: symptomsAnalysis question 1 (C:\Users\smacz\AppData\Local\Temp\tmpm9vamfvi\78ee702be1c44b918cf23b7c9bbf7e45_conversation_tests.md)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: symptomsAnalysisQuery
+  - action: utter_forwardToSymptomsAnalysis  # predicted: symptoms_analysis_form
+  - action: action_get_symptoms_analysis  # predicted: action_listen
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye

@@ -1,0 +1,122 @@
+{
+  "symptomsAnalysisQuery": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "utter_welcome": {
+    "precision": 0.875,
+    "recall": 0.875,
+    "f1-score": 0.875,
+    "support": 16
+  },
+  "None": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 16
+  },
+  "utter_forwardToSymptomsAnalysis": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5
+  },
+  "hospitalSearchQuery": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 6
+  },
+  "sideEffectsQuery": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "action_get_symptoms_analysis": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5
+  },
+  "utter_forwardToSideEffects": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "action_get_hospital_search": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "thanks": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "utter_forwardToHospitalSearch": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 6
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17
+  },
+  "action_listen": {
+    "precision": 0.9285714285714286,
+    "recall": 1.0,
+    "f1-score": 0.962962962962963,
+    "support": 65
+  },
+  "utter_goodbye": {
+    "precision": 0.6521739130434783,
+    "recall": 0.8823529411764706,
+    "f1-score": 0.75,
+    "support": 17
+  },
+  "utter_greet": {
+    "precision": 0.9375,
+    "recall": 0.9375,
+    "f1-score": 0.9375,
+    "support": 16
+  },
+  "action_get_side_effects": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
+  "micro avg": {
+    "precision": 0.9191919191919192,
+    "recall": 0.801762114537445,
+    "f1-score": 0.8564705882352942,
+    "support": 227
+  },
+  "macro avg": {
+    "precision": 0.6701909024479358,
+    "recall": 0.6585207612456747,
+    "f1-score": 0.6583605664488017,
+    "support": 227
+  },
+  "weighted avg": {
+    "precision": 0.7772867814047665,
+    "recall": 0.801762114537445,
+    "f1-score": 0.7856501876325666,
+    "support": 227
+  }
+}

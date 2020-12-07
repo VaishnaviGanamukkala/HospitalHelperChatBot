@@ -1,3 +1,6 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
 intents:
 - hospitalSearchWithNoLocation
 - hospitalSearchQuery
@@ -12,44 +15,28 @@ intents:
 - informSymptoms
 - informYOB
 - informLocation
-
-forms:
-- symptoms_analysis_form
-
-slots:
-  gender:
-    type: unfeaturized
-  medicine:
-    type: text
-  location:
-    type: text
-  symptoms:
-    type: unfeaturized
-  year_of_birth:
-    type: unfeaturized
-
 entities:
 - gender
 - medicine
 - location
 - symptoms
 - year_of_birth
-
-actions:
-- action_get_diagnosis_and_specializations
-- action_get_side_effects
-- utter_ask_gender
-- utter_ask_symptoms
-- utter_ask_year_of_birth
-- utter_forwardToSideEffects
-- utter_goodbye
-- utter_greet
-- utter_options
-- utter_unclear
-- utter_welcome
-- utter_forwardToHospitalSearch
-- action_get_hospital_search
-
+slots:
+  gender:
+    type: unfeaturized
+    influence_conversation: false
+  medicine:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+  symptoms:
+    type: unfeaturized
+    influence_conversation: false
+  year_of_birth:
+    type: unfeaturized
+    influence_conversation: false
 responses:
   utter_ask_gender:
   - buttons:
@@ -69,7 +56,8 @@ responses:
   utter_greet:
   - text: Hi, Great to see you!
   utter_options:
-  - text: I can inform you regarding drug side effects, tell the possible disease you may have due to the symptoms you have and get the nearest hospitals.
+  - text: I can inform you regarding drug side effects, tell the possible disease
+      you may have due to the symptoms you have and get the nearest hospitals.
   utter_forwardToHospitalSearch:
   - text: Navigating to hospital search module...
   utter_ask_city:
@@ -85,7 +73,20 @@ responses:
   - text: I'm not sure what you are trying to say...
   utter_welcome:
   - text: Your welcome. Always here to help you!
-
-session_config:
-  carry_over_slots_to_new_session: false
-  session_expiration_time: 60
+actions:
+- action_get_diagnosis_and_specializations
+- action_get_side_effects
+- utter_ask_gender
+- utter_ask_symptoms
+- utter_ask_year_of_birth
+- utter_forwardToSideEffects
+- utter_goodbye
+- utter_greet
+- utter_options
+- utter_unclear
+- utter_welcome
+- utter_forwardToHospitalSearch
+- action_get_hospital_search
+- symptoms_analysis_form
+forms:
+  symptoms_analysis_form: {}

@@ -149,3 +149,37 @@
 ## say goodbye
 * goodbye: bye-bye!
   - utter_goodbye
+
+
+## error question 2
+* greet: hello there!
+  - utter_greet
+* symptomsAnalysisQuery: which doctor should i meet
+  - utter_welcome
+* thanks: great thank you
+  - utter_forwardToSymptomsAnalysis
+  - action_get_symptoms_analysis
+* goodbye: bye-bye
+  - utter_goodbye   
+  
+## error path 1
+* greet: hello there!
+  - utter_goodbye
+* hospitalSearchQuery: list of health care centers located around Hyderabad
+  - utter_forwardToHospitalSearch
+  - action_get_hospital_search
+* thanks: that's cool. much obliged
+  - utter_welcome
+* goodbye: see you later!
+  - utter_greet
+  
+## error question 4
+* greet: hi there!
+  - utter_greet
+* sideEffectsQuery: will there be any effects on using omeprazole
+  - utter_forwardToSideEffects
+  - action_get_side_effects
+* thanks: thanks a lot
+  - utter_goodbye
+* goodbye: see you soon
+  - utter_welcome
