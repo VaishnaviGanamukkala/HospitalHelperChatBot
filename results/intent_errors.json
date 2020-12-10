@@ -1,0 +1,10 @@
+[
+  {
+    "text": "my city is bangalore",
+    "intent": "informLocation",
+    "intent_prediction": {
+      "name": "symptomsAnalysisQuery",
+      "confidence": 0.24716202914714813
+    }
+  }
+]

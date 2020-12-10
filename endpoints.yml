@@ -40,3 +40,11 @@ action_endpoint:
 #  username: username
 #  password: password
 #  queue: queue
+
+
+tracker_store:
+    type: mongod
+    url: mongodb://localhost:27017
+    db: rasa_history
+    username: admin
+    password: admin
